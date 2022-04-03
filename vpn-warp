@@ -1,0 +1,26 @@
+#!/bin/bash
+PID=
+trap "echo \"Stoping...\"; warp-cli disconnect ;pkill -15 vpn2.sh" 2
+for ((;;)); do
+   kill -15 $PID 1>/dev/null 2>/dev/null
+   for ((;;)); do
+      if [[ $(ifconfig | grep CloudflareWARP) = '' ]];then
+         echo "Restoring connection to warp"
+         /bin/warp-cli register && /bin/warp-cli connect
+         date +"%H:%M"
+         sleep 3
+         curl 2ip.ua
+      fi
+      sleep 5 
+   done &
+   PID=$!
+   if [[ $(ifconfig | grep CloudflareWARP) != '' ]];then
+      echo ''
+      /bin/warp-cli register && /bin/warp-cli connect
+      date +"%H:%M"
+      sleep 3
+      curl 2ip.ua
+   fi
+   sleep $(($((RANDOM%15+15))*60))
+done
+wait
