@@ -1,0 +1,119 @@
+#!/bin/bash
+allcycle=''
+N=
+
+worker(){
+netcat -n $T1 &
+N="$N $!"
+netcat -n $T2 &
+N="$N $!"
+netcat -n $T3 &
+N="$N $!"
+netcat -n $T4 &
+N="$N $!"
+netcat -n $T5 &
+N="$N $!"
+netcat -n $T6 &
+N="$N $!"
+netcat -n $T7 &
+N="$N $!"
+netcat -n $T8 &
+N="$N $!"
+netcat -n $T9 &
+N="$N $!"
+netcat -n $T10 &
+N="$N $!"
+netcat -n $T11 &
+N="$N $!"
+netcat -n $T12 &
+N="$N $!"
+netcat -n $T13 &
+N="$N $!"
+netcat -n $T14 &
+N="$N $!"
+netcat -n $T15 &
+N="$N $!"
+netcat -n $T16 &
+N="$N $!"
+netcat -n $T17 &
+N="$N $!"
+netcat -n $T18 &
+N="$N $!"
+netcat -n $T19 &
+N="$N $!"
+netcat -n $T20 &
+N="$N $!"
+sleep $t1
+netcat -n $T21 &
+N="$N $!"
+netcat -n $T22 &
+N="$N $!"
+netcat -n $T23 &
+N="$N $!"
+netcat -n $T24 &
+N="$N $!"
+netcat -n $T25 &
+N="$N $!"
+netcat -n $T26 &
+N="$N $!"
+netcat -n $T27 &
+N="$N $!"
+netcat -n $T28 &
+N="$N $!"
+netcat -n $T29 &
+N="$N $!"
+netcat -n $T30 &
+N="$N $!"
+netcat -n $T31 &
+N="$N $!"
+netcat -n $T32 &
+N="$N $!"
+netcat -n $T33 &
+N="$N $!"
+netcat -n $T34 &
+N="$N $!"
+netcat -n $T35 &
+N="$N $!"
+netcat -n $T36 &
+N="$N $!"
+netcat -n $T37 &
+N="$N $!"
+netcat -n $T38 &
+N="$N $!"
+netcat -n $T39 &
+N="$N $!"
+netcat -n $T40 &
+N="$N $!"
+
+cycler
+}
+
+cycler(){
+if [[ "$cycle" -lt "$lim" ]]; then
+  cycle=$(($cycle+1))
+  sleep $t1
+  worker
+fi
+if [[ "$cycle" -eq "$lim" ]]; then
+  echo "Netcat connections: $(netstat -ntp | grep netcat | wc -l)" && \
+  echo "Killing netcat process..."
+  sleep $t3
+  kill -15 $N &>/dev/null
+  kill -15 $(pgrep -f netcat) &>/dev/null
+  sleep 3
+  echo 'Run next cycle'
+  starter
+fi
+}
+
+starter(){
+cycle='1'
+allcycle=$(($allcycle+1))
+source ./ntct-env.txt
+echo -e "Cycle=$allcycle\nTimeout1="$t1"s\nTimeout2="$t2"s\nTimeout3="$t3"s\nLimit=$lim\n$(date)"
+cycler
+}
+
+trap "echo \"Stoping...\" & (killall -w -15 ntct) & (pkill -15 netcat) &" 2
+source ./ntct-env.txt
+starter

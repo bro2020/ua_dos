@@ -1,0 +1,141 @@
+#!/bin/bash
+source ./ntct-env.txt
+sq1='8' # Количество одновременно работающих циклов
+Ccount='1'
+C=
+N=
+
+echo -e "Parallel working: $sq1 cycle\nConnections: $(netstat -ntp | grep netcat | wc -l)\nCycle: $Ccount\nRCount=$Rcount\nTimeout1="$t1"s\nTimeout2="$t2"s\n$(date)"
+
+w(){
+nice -n19 netcat -n $T1 &
+N="$N $!"
+nice -n19 netcat -n $T2 &
+N="$N $!"
+nice -n19 netcat -n $T3 &
+N="$N $!"
+nice -n19 netcat -n $T4 &
+N="$N $!"
+nice -n19 netcat -n $T5 &
+N="$N $!"
+nice -n19 netcat -n $T6 &
+N="$N $!"
+nice -n19 netcat -n $T7 &
+N="$N $!"
+nice -n19 netcat -n $T8 &
+N="$N $!"
+nice -n19 netcat -n $T9 &
+N="$N $!"
+nice -n19 netcat -n $T10 &
+N="$N $!"
+nice -n19 netcat -n $T11 &
+N="$N $!"
+nice -n19 netcat -n $T12 &
+N="$N $!"
+nice -n19 netcat -n $T13 &
+N="$N $!"
+nice -n19 netcat -n $T14 &
+N="$N $!"
+nice -n19 netcat -n $T15 &
+N="$N $!"
+nice -n19 netcat -n $T16 &
+N="$N $!"
+nice -n19 netcat -n $T17 &
+N="$N $!"
+nice -n19 netcat -n $T18 &
+N="$N $!"
+nice -n19 netcat -n $T19 &
+N="$N $!"
+nice -n19 netcat -n $T20 &
+N="$N $!"
+nice -n19 netcat -n $T21 &
+N="$N $!"
+nice -n19 netcat -n $T22 &
+N="$N $!"
+nice -n19 netcat -n $T23 &
+N="$N $!"
+nice -n19 netcat -n $T24 &
+N="$N $!"
+nice -n19 netcat -n $T25 &
+N="$N $!"
+nice -n19 netcat -n $T26 &
+N="$N $!"
+nice -n19 netcat -n $T27 &
+N="$N $!"
+nice -n19 netcat -n $T28 &
+N="$N $!"
+nice -n19 netcat -n $T29 &
+N="$N $!"
+nice -n19 netcat -n $T30 &
+N="$N $!"
+nice -n19 netcat -n $T31 &
+N="$N $!"
+nice -n19 netcat -n $T32 &
+N="$N $!"
+nice -n19 netcat -n $T33 &
+N="$N $!"
+nice -n19 netcat -n $T34 &
+N="$N $!"
+nice -n19 netcat -n $T35 &
+N="$N $!"
+nice -n19 netcat -n $T36 &
+N="$N $!"
+nice -n19 netcat -n $T37 &
+N="$N $!"
+nice -n19 netcat -n $T38 &
+N="$N $!"
+nice -n19 netcat -n $T39 &
+N="$N $!"
+nice -n19 netcat -n $T40 &
+N="$N $!"
+nice -n19 netcat -n $T41 &
+N="$N $!"
+nice -n19 netcat -n $T42 &
+N="$N $!"
+nice -n19 netcat -n $T43 &
+N="$N $!"
+nice -n19 netcat -n $T44 &
+N="$N $!"
+nice -n19 netcat -n $T45 &
+N="$N $!"
+nice -n19 netcat -n $T46 &
+N="$N $!"
+nice -n19 netcat -n $T47 &
+N="$N $!"
+nice -n19 netcat -n $T48 &
+N="$N $!"
+nice -n19 netcat -n $T49 &
+N="$N $!"
+nice -n19 netcat -n $T50 &
+N="$N $!"
+}
+
+for i in $(seq $sq1);do
+   for ((;;));do
+      C=$(($C+1))
+      if [[ $C -eq "$Rcount" ]];then
+         source ./ntct-env.txt
+         Ccount=$(($Ccount+1))
+         if [[ $i -eq '1' ]];then
+            echo -e "Parallel working: $sq1 cycle\nConnections: $(netstat -ntp | grep netcat | wc -l)\nCycle: $Ccount\nRCount=$Rcount\nTimeout1="$t1"s\nTimeout2="$t2"s\n$(date)"
+            echo "Timeout "$t1"s and killing netcat process..."
+         fi 
+         sleep $t1
+         kill -15 $N &>/dev/null
+         kill -15 $(pgrep -x netcat) &>/dev/null
+         N=''
+         C='0'
+         if [[ $i -eq '1' ]];then
+            echo "Run next cycle"
+         fi
+         sleep 2
+      fi
+      w
+      sleep $t2
+   done &
+done
+
+trap "echo \"Stoping...\"; (killall -w -15 ntct) & (pkill -15 netcat) &" 2
+
+wait
+(pkill -15 ntct) & (pkill -15 netcat) &
