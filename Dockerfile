@@ -1,10 +1,7 @@
 FROM debian:bullseye-slim
+COPY curl-atack* vpn-warp warp_2022_3_253_1.deb /opt/
 RUN apt update && \
-    apt install curl gpg -y && \
-    curl https://pkg.cloudflareclient.com/pubkey.gpg | gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg && \
-    echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ bullseye main' | tee /etc/apt/sources.list.d/cloudflare-client.list && \
-    apt update && \
-    apt install cloudflare-warp -y && \
+    apt install coreutils curl libcap2-bin -y && \
+    apt install /opt/warp_2022_3_253_1.deb -y && \
     rm -rf /var/cache/apt/*
-COPY curl-atack* vpn-warp /opt
-CMD ["bash", "/opt/vpn-warp", "/opt/curl-atack"]
+CMD ["/bin/bash", "/opt/curl-atack"]
