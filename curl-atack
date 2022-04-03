@@ -1,7 +1,5 @@
 #!/bin/bash
-source "$(readlink $0)/vpn-warp"
-sleep 3
-source "$(readlink $0)/curl-atack-env.txt"
+source "$(dirname $0)"/curl-atack-env.txt
 R=
 C=
 w=
@@ -240,7 +238,7 @@ for ((;;)); do
    if [[ "$w" -eq "$rcount" ]];then
       echo "t1="$t1"s t2="$t2"s t3="$t4"s t4="$t4"s | sq1="$sq1"counts sq2="$sq2"counts"
       echo "RCount=$w/"$rcount"counts. Killing curl process..."
-      source "$(readlink $0)/curl-atack-env.txt"
+      source "$(dirname $0)"/curl-atack-env.txt
       kill -15 $C &>/dev/null
       kill -15 $(pgrep -x curl) &>/dev/null
       for j in $(seq 1); do
