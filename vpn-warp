@@ -1,6 +1,6 @@
 #!/bin/bash
 PIDW=
-trap "echo \"Stoping...\"; warp-cli disconnect ;pkill -15 vpn-warp" 2
+trap "echo \"Stoping warp...\"; warp-cli disconnect ;pkill -15 vpn-warp" 2
 for ((;;)); do
    kill -15 $PIDW 1>/dev/null 2>/dev/null
    for ((;;)); do
