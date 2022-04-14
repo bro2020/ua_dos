@@ -40,4 +40,9 @@ UA3='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chro
 UA4='Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.78 Mobile Safari/537.36'
 UA5='Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0'
 ```
-3. Меняй их по вкусу.
+3. Меняй их по вкусу. Сюда же можно вписать свои таргеты в виде задания переменных:
+```
+H1='http://target.ru'
+...
+H50='https://target.ru'
+```
