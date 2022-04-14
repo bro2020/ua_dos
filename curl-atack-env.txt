@@ -1,7 +1,7 @@
 rcount=$((RANDOM%10+5)) # количетво итераций, после которого завершаются процессы curl
 sq1=$((RANDOM%2+1)) # количество параллельных циклов
 sq2=$((RANDOM%2+2)) # количество прогонов в каждом из циклов
-t1=$((RANDOM%15+5)) # таймают перед завершением процессов curl)
+t1=$((RANDOM%7+7)) # таймают перед завершением процессов curl)
 t2=$((RANDOM%2+1)) # таймаут(скорость) запуска параллельных циклов
 t3=$((RANDOM%3+1)) # таймаут между прогонами каждого из циклов
 t4='15' # таймаут автоматического постоянного завершения процессов curl
@@ -42,7 +42,7 @@ H25='http://nrz.api.sb.mdlp.crpt.ru'
 H26='http://api.sb.mdlp.crpt.ru'
 H27='https://minfin.gov.ru'
 H28='https://edo-gismt.crpt.ru'
-H29='https://xn--80aqu.xn----7sbabas4ajkhfocclk9d3cvfsa.xn--p1ai/v3/feed-product?apikey=6A9769C235F234&gtin=63649273152709'
+H29='https://sber.ru/'
 H30='https://www.crpt.ru'
 
 H31='https://sber.ru/'
@@ -61,7 +61,7 @@ H42='http://nrz.api.sb.mdlp.crpt.ru'
 H43='https://wi.sbis.ru/auth/?ret=%2F'
 H44='https://sso.sbis.ru/auth-online/?ret='
 H45='https://fix-sso.sbis.ru/auth-online/?ret='
-H46='https://апи.национальный-каталог.рф'
+H46='https://sber.ru/'
 H47='http://transit1.taxcom.ru/'
 H48='http://support.taxcom.ru/'
 H49='https://lk-ofd.taxcom.ru/'
