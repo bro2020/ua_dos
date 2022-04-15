@@ -1,5 +1,5 @@
 rcount=$((RANDOM%10+7)) # количетво итераций, после которого принудительно завершаются процессы curl
-sq1=$((RANDOM%3+1)) # количество параллельно выполняемых циклов
+sq1='2' # количество параллельно выполняемых циклов
 sq2=$((RANDOM%3+2)) # количество прогонов в каждом из параллельных циклов (1 итерация)
 t1=$((RANDOM%7+7)) # таймают перед принудительным завершением процессов curl)
 t2=$((RANDOM%2+1)) # таймаут(скорость) запуска проходов в параллельно выполняемых циклах
@@ -23,7 +23,7 @@ H8='https://www.sberbank.ru/ru/person'
 H9='https://3dsec.sberbank.ru/'
 H10='https://mobilecm.csc.sberbank.ru/'
 
-H11='https://office.sberbank.ru/'
+H11='https://office.sberbank.ru/'-env.txt
 H12='https://sber.ru/'
 H13='https://sber.ru/business'
 H14='https://platon.ru/wp-content/uploads/2016/04/1-%D0%94%D0%B5%D0%BA%D0%BB%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%A2%D0%A0-%D0%A2%D0%A1-020.pdf'
