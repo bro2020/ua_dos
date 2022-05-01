@@ -1,0 +1,11 @@
+pty "/usr/sbin/pptp 49ce045ba9e1.sn.mynetname.net --loglevel 0 --nolaunchpppd"
+lock
+noauth
+nobsdcomp
+nodeflate
+name brodmin
+remotename vpn1
+ipparam vpn1
+persist
+maxfail 0
+holdoff 10

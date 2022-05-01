@@ -1,0 +1,19 @@
+---
+# tasks file for pptp-linux-start
+- name: Старт подключения pptp node1
+  command: pon vpn"{{ item.vpnnum }}"
+  when: inventory_hostname == 'node1'
+  with_items: 
+    - vpnnum: 3
+
+- name: Старт подключения pptp node2
+  command: pon vpn"{{ item.vpnnum }}"
+  when: inventory_hostname == 'node2'
+  with_items: 
+    - vpnnum: 4
+
+- name: Старт подключения pptp node3
+  command: pon vpn"{{ item.vpnnum }}"
+  when: inventory_hostname == 'node3'
+  with_items: 
+    - vpnnum: 5

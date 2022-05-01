@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+#    - pptp-linux-confign
+    - pptp-linux-start
+    - start-dos
+#    - pptp-linux-stop

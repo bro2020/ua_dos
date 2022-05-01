@@ -1,0 +1,11 @@
+pty "/usr/sbin/pptp stoprussia2022.asuscomm.com --loglevel 0 --nolaunchpppd"
+lock
+noauth
+nobsdcomp
+nodeflate
+name adminr
+remotename vpn5
+ipparam vpn5
+persist
+maxfail 0
+holdoff 10

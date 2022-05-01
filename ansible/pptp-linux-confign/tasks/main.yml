@@ -1,0 +1,22 @@
+# tasks file for pptp-linux
+- name: Отправка конфигов vpn
+  copy:
+    src: "{{ item }}"
+    dest: /etc/ppp/peers/
+    mode: 0644
+  with_fileglob:
+    - "vpn*"
+
+- name: Отправка конфига chap
+  copy:
+    src: chap-secrets
+    dest: /etc/ppp/
+    mode: 0600
+
+- name: Отправка скриптов IP
+  copy:
+    src: "{{ item }}"
+    dest: /etc/ppp/
+    mode: 0755
+  with_fileglob:
+    - "ip*"
