@@ -1,4 +1,5 @@
 - hosts: "{{ host }}"
+  become: yes
   roles:
 #    - confign
     - pptp-linux-start
