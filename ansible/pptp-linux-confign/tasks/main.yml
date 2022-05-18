@@ -5,7 +5,9 @@
 
 - name: Установка pptp-linux
   apt: 
-    name: pptp-linux
+    name: 
+      - pptp-linux
+      - curl
     state: present
 
 - name: Отправка конфигов vpn

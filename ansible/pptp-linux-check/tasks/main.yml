@@ -1,0 +1,7 @@
+---
+# tasks file for pptp-linux-check
+- name: Проверка состояния VPN подключения
+  command: /usr/sbin/ifconfig | grep ppp0
+  register: result
+
+  debug: msg="{{result.stdout}}"

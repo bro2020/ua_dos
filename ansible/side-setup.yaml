@@ -1,4 +1,4 @@
-- hosts: srv
+- hosts: "{{ host }}"
   become: yes
   roles:
     - pptp-linux-confign
