@@ -1,9 +1,15 @@
 ---
 # tasks file for pptp-linux-check
-- name: Проверка состояния VPN подключения
-  shell: "/usr/bin/curl 2ip.ua && /usr/sbin/ifconfig | /usr/bin/grep ppp0"
-  register: res
+- name: Проверка внешнего IP
+  shell: "/usr/bin/curl 2ip.ua"
+  register: res1
+  changed_when: false
+
+- name: Проверка номера VPN подключения
+  shell: "/usr/bin/ps -aux | grep call"
+  register: res2
   changed_when: false
 
 - name: Отображние информации
-  debug: msg="{{ res.stdout }}"
+  debug:
+    msg: "{{ res1.stdout }} {{ res2.stdout }}"
