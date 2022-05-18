@@ -1,8 +1,7 @@
 - hosts: "{{ host }}"
-  become: yes
   roles:
-    - pptp-linux-confign
-#    - pptp-linux-start
+#    - confign
+    - pptp-linux-start
 #    - pptp-linux-stop
 #    - pptp-linux-check
 #    - start-dos

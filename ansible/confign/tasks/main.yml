@@ -1,14 +1,11 @@
 # tasks file for pptp-linux
-- name: Обновление кеша apt
-  apt: 
-    update_cache: yes
-
-- name: Установка pptp-linux
+- name: Установка зависимостей
   apt: 
     name: 
       - pptp-linux
       - curl
     state: present
+    update_cache: yes
 
 - name: Отправка конфигов vpn
   copy:
@@ -31,3 +28,12 @@
     mode: 0755
   with_fileglob:
     - "ip*"
+
+- name: Получение архива db1000n
+  get_url:
+    url: https://github.com/arriven/db1000n/releases/download/v0.9.4/db1000n_linux_amd64.tar.gz
+    dest: /root/
+    mode: 0644
+
+- name: Распаковка бинарника db1000n
+  shell: "tar -xf /root/db1000n_linux_amd64.tar.gz -C /root/ && rm /root/db1000n_linux_amd64.tar.gz"
