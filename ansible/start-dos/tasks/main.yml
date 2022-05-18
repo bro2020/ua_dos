@@ -1,4 +1,4 @@
 ---
 # tasks file for start-dos
 - name: Запуск db1000n
-  shell: /root/db1000n &
+  shell: "nohup /root/db1000n >/dev/null 2>&1 &"

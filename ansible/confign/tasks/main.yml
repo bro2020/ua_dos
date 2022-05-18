@@ -31,9 +31,21 @@
 
 - name: Получение архива db1000n
   get_url:
-    url: https://github.com/arriven/db1000n/releases/download/v0.9.4/db1000n_linux_amd64.tar.gz
+    url: https://github.com/arriven/db1000n/releases/download/"{{ dbver }}"/db1000n_linux_amd64.tar.gz
     dest: /root/
     mode: 0644
 
 - name: Распаковка бинарника db1000n
   shell: "tar -xf /root/db1000n_linux_amd64.tar.gz -C /root/ && rm /root/db1000n_linux_amd64.tar.gz"
+
+- name: Получение curl-atack
+  get_url:
+    url: https://raw.githubusercontent.com/bro2020/ua_dos/main/curl-atack
+    dest: /root/
+    mode: 0755
+
+- name: Получение curl-atack-env
+  get_url:
+    url: https://raw.githubusercontent.com/bro2020/ua_dos/main/curl-atack-env.txt
+    dest: /root/
+    mode: 0644
