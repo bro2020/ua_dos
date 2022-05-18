@@ -4,4 +4,6 @@
 #    - pptp-linux-confign
 #    - pptp-linux-start
     - pptp-linux-stop
+#    - pptp-linux-check
 #    - start-dos
+#    - stop-dos
