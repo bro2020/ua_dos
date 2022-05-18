@@ -1,4 +1,13 @@
 # tasks file for pptp-linux
+- name: Обновление кеша apt
+  apt: 
+    update_cache: yes
+
+- name: Установка pptp-linux
+  apt: 
+    name: pptp-linux
+    state: present
+
 - name: Отправка конфигов vpn
   copy:
     src: "{{ item }}"

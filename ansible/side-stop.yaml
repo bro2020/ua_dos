@@ -1,0 +1,7 @@
+- hosts: srv
+  become: yes
+  roles:
+#    - pptp-linux-confign
+#    - pptp-linux-start
+#    - start-dos
+    - pptp-linux-stop

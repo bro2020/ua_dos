@@ -1,2 +1,6 @@
 ---
 # vars file for pptp-linux-stop
+srv_vnum: 6
+node1_vnum: 3
+node2_vnum: 4
+node3_vnum: 5

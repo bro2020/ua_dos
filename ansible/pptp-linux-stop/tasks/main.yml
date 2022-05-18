@@ -4,16 +4,22 @@
   command: poff vpn"{{ item.vpnnum }}"
   when: inventory_hostname == 'node1'
   with_items: 
-    - vpnnum: 3
+    - vpnnum: "{{ node1_vnum }}"
 
 - name: Стоп подключения pptp node2
   command: poff vpn"{{ item.vpnnum }}"
   when: inventory_hostname == 'node2'
   with_items: 
-    - vpnnum: 4
+    - vpnnum: "{{ node2_vnum }}"
 
 - name: Стоп подключения pptp node3
   command: poff vpn"{{ item.vpnnum }}"
   when: inventory_hostname == 'node3'
   with_items: 
-    - vpnnum: 5
+    - vpnnum: "{{ node3_vnum }}"
+
+- name: Стоп подключения pptp srv
+  command: poff vpn"{{ item.vpnnum }}"
+  when: inventory_hostname == 'srv'
+  with_items: 
+    - vpnnum: "{{ srv_vnum }}"

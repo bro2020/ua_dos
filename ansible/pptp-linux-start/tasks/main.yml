@@ -4,16 +4,22 @@
   command: pon vpn"{{ item.vpnnum }}"
   when: inventory_hostname == 'node1'
   with_items: 
-    - vpnnum: 3
+    - vpnnum: "{{ node1_vnum }}"
 
 - name: Старт подключения pptp node2
   command: pon vpn"{{ item.vpnnum }}"
   when: inventory_hostname == 'node2'
   with_items: 
-    - vpnnum: 4
+    - vpnnum: "{{ node2_vnum }}"
 
 - name: Старт подключения pptp node3
   command: pon vpn"{{ item.vpnnum }}"
   when: inventory_hostname == 'node3'
   with_items: 
-    - vpnnum: 5
+    - vpnnum: "{{ node3_vnum }}"
+
+- name: Старт подключения pptp srv
+  command: pon vpn"{{ item.vpnnum }}"
+  when: inventory_hostname == 'srv'
+  with_items: 
+    - vpnnum: "{{ srv_vnum }}"
