@@ -10,6 +10,11 @@
   register: res2
   changed_when: false
 
+- name: Получение вывода ps
+  shell: "ps -aux --sort -pcpu | head -n10"
+  register: res3
+  changed_when: false
+
 - name: Отображние информации
   debug:
-    msg: "{{ res1.stdout }} {{ res2.stdout }}"
+    msg: "{{ res1.stdout }} \n\n {{ res2.stdout }} \n\n {{ res3.stdout }}"
