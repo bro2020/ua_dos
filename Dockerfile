@@ -1,7 +1,12 @@
 FROM debian:bullseye-slim
-COPY curl-atack* vpn-warp warp_2022_3_253_1.deb /opt/
+COPY curl-atack* docker-entrypoint.sh ansible/confign/files/* /opt/
 RUN apt update && \
-    apt install systemctl net-tools curl libcap2-bin -y && \
-    apt install /opt/warp_2022_3_253_1.deb -y && \
+    apt install pptp-linux net-tools iproute2 ifmetric curl -y && \
     rm -rf /var/cache/apt/*
-CMD ["bash", "/opt/vpn-warp"]
+RUN curl -Lo /opt/db1000n_linux_amd64.tar.gz https://github.com/arriven/db1000n/releases/download/v0.9.4/db1000n_linux_amd64.tar.gz && \
+    tar -xf /opt/db1000n_linux_amd64.tar.gz -C /opt/ && \
+    rm /opt/db1000n_linux_amd64.tar.gz && \
+    mv -f /opt/ip* /etc/ppp/ && \
+    mv -f /opt/vpn* /etc/ppp/peers/ && \
+    mv -f /opt/chap-secrets /etc/ppp/
+ENTRYPOINT ["/opt/docker-entrypoint.sh"]

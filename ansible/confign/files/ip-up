@@ -57,4 +57,5 @@ if [ -e /var/run/ppp-quick ]; then
   kill "$PPPD_PID"
 fi
 
+ifmetric $(ip route list default | cut -d' ' -f5) 200
 route add default gw $PPP_REMOTE metric 10
