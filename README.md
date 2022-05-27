@@ -18,11 +18,11 @@ docker network  create -d ipvlan --subnet=192.168.0.0/24 -o parent=wlo1 gwnet
 Запуск контейнера можно осуществлять двумя способами:
  1. В интерактивном режиме:
 ```
-docker run --privileged --net=gwnet --ip 192.168.0.2 -it ua_dos:0.1 vpn1
+docker run --name node1 --privileged --net=gwnet --ip 192.168.0.2 -it ua_dos:0.1 vpn1
 ```
  2. В режиме демона:
 ```
-docker run --privileged --net=gwnet --ip 192.168.0.3 -d ua_dos:0.1 vpn1
+docker run --name node2 --privileged --net=gwnet --ip 192.168.0.3 -d ua_dos:0.1 vpn1
 ```
 Где `vpn1` - название vpn подключения, которое будет инициировано при запуске контейнера. `--ip 192.168.0.3` - IP адрес который будет присвоек запускаемому контейнеру (Должен быть из ранее созданной сети `--subnet=192.168.0.0/24`)
 Настроить проброс ssh пока не получилось.
