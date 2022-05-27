@@ -1,9 +1,9 @@
-pty "/usr/sbin/pptp e7e90ebc90f4.sn.mynetname.net --loglevel 0 --nolaunchpppd"
+pty "/usr/sbin/pptp supportua.asuscomm.com --loglevel 0 --nolaunchpppd"
 lock
 noauth
 nobsdcomp
 nodeflate
-name user
+name adminr
 remotename vpn8
 ipparam vpn8
 persist

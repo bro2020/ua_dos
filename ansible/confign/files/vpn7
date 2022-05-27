@@ -1,4 +1,4 @@
-pty "/usr/sbin/pptp jvcklxjkxcjvjkcjxv1223.asuscomm.com --loglevel 0 --nolaunchpppd"
+pty "/usr/sbin/pptp warsupport.asuscomm.com --loglevel 0 --nolaunchpppd"
 lock
 noauth
 nobsdcomp

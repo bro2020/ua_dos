@@ -1,9 +1,9 @@
-pty "/usr/sbin/pptp stop2022.asuscomm.com --loglevel 0 --nolaunchpppd"
+pty "/usr/sbin/pptp 469c0284798d.sn.mynetname.net --loglevel 0 --nolaunchpppd"
 lock
 noauth
 nobsdcomp
 nodeflate
-name adminr
+name user
 remotename vpn9
 ipparam vpn9
 persist
