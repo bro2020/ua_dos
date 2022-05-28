@@ -2,7 +2,7 @@ FROM debian:bullseye-slim
 WORKDIR /opt/
 COPY curl-atack* docker-entrypoint.sh ansible/confign/files/* ssh/id_rsa.pub ./
 RUN apt update && \
-    apt install pptp-linux net-tools iproute2 ifmetric iputils-ping curl ssh -y && \
+    apt install pptp-linux net-tools iproute2 ifmetric curl ssh -y && \
     curl -Lo db1000n_linux_amd64.tar.gz https://github.com/arriven/db1000n/releases/download/v0.9.4/db1000n_linux_amd64.tar.gz && \
     tar -xf /opt/db1000n_linux_amd64.tar.gz -C ./
 RUN rm db1000n_linux_amd64.tar.gz && \
