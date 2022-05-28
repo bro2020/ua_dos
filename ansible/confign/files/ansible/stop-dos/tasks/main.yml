@@ -1,4 +1,0 @@
----
-# tasks file for stop-dos
-- name: Остановка db1000n
-  shell: "pkill -9 db1000n"
