@@ -1,9 +1,9 @@
-pty "/usr/sbin/pptp 49ce045ba9e1.sn.mynetname.net --loglevel 0 --nolaunchpppd"
+pty "/usr/sbin/pptp host1.vpn.com --loglevel 0 --nolaunchpppd"
 lock
 noauth
 nobsdcomp
 nodeflate
-name brodmin
+name uservpn1
 remotename vpn1
 ipparam vpn1
 persist
