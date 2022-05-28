@@ -1,0 +1,11 @@
+pty "/usr/sbin/pptp warsupport.asuscomm.com --loglevel 0 --nolaunchpppd"
+lock
+noauth
+nobsdcomp
+nodeflate
+name adminr
+remotename vpn7
+ipparam vpn7
+persist
+maxfail 0
+holdoff 10
