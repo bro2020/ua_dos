@@ -1,6 +1,8 @@
 #!/bin/bash
 VNUM=$1
 
+/etc/init.d/ssh start
+
 con(){
 echo "VNUM=$VNUM"
 pon ${VNUM}
