@@ -2,6 +2,7 @@
 ## Docker
 Внутри докера запускается pptp vpn соединение и бинарник db1000n проекта https://github.com/Arriven/db1000n.
 Нужно создать файлы конфигурации pptp в директории: `ansible/confign/files/vpn1...*` и файл паролей `ansible/confign/files/chap-secrets`.
+
 Пример файла vpn1:
 ```
 pty "/usr/sbin/pptp hostvpn1 --loglevel 0 --nolaunchpppd"
