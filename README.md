@@ -1,8 +1,34 @@
 # ua_dos
 ## Docker
 Внутри докера запускается pptp vpn соединение и бинарник db1000n проекта https://github.com/Arriven/db1000n.
-Файлы конфигурации pptp размещаются в директории: `ansible/confign/files/vpn*` и файл паролей `ansible/confign/files/chap-secrets`.
-При сборке image они забираются внутрь.
+Нужно создать файлы конфигурации pptp в директории: `ansible/confign/files/vpn1...*` и файл паролей `ansible/confign/files/chap-secrets`.
+Пример файла vpn1:
+```
+pty "/usr/sbin/pptp hostvpn1 --loglevel 0 --nolaunchpppd"
+lock
+noauth
+nobsdcomp
+nodeflate
+name uservpn1
+remotename vpn1
+ipparam vpn1
+persist
+maxfail 0
+holdoff 10
+```
+Здесь задаются: `hostvpn1` - IP адрес, или домен vpn сервера; `uservpn1` - имя пользователя pptp подключения; `vpn1` - названия vpn подключения.
+
+Пример файла chap-secrets:
+```
+# Secrets for authentication using CHAP
+# client        server  secret                  IP addresses
+uservpn1 vpn1 "passwordvpn1" *
+...
+uservpn* vpn* "passwordvpn*" *
+```
+Здесь задаются:`uservpn1` - имя пользователя pptp подключения;`passwordvpn1` - пароль pptp подключения; `vpn1` - названия vpn подключения.
+
+При сборке image эти файлы забираются внутрь.
 
 Собирается image командой:
 ```
