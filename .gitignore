@@ -1,1 +1,7 @@
 ssh/
+ansible/confign/files/
+ansible/confign/files/chap-secrets
+ansible/confign/files/ip-down
+ansible/confign/files/ip-up
+ansible/confign/files/vpn1
+ansible/confign/files/vpn2
