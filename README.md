@@ -3,7 +3,7 @@
 Внутри докера запускается pptp vpn соединение и бинарник db1000n проекта https://github.com/Arriven/db1000n.
 Нужно создать файлы конфигурации pptp в директории: `ansible/confign/files/vpn1...*` и файл паролей `ansible/confign/files/chap-secrets`.
 
-Пример файла vpn1:
+Пример файла `vpn1`:
 ```
 pty "/usr/sbin/pptp hostvpn1 --loglevel 0 --nolaunchpppd"
 lock
@@ -19,7 +19,7 @@ holdoff 10
 ```
 Здесь задаются: `hostvpn1` - IP адрес, или домен vpn сервера; `uservpn1` - имя пользователя pptp подключения; `vpn1` - названия vpn подключения.
 
-Пример файла chap-secrets:
+Пример файла `chap-secrets`:
 ```
 # Secrets for authentication using CHAP
 # client        server  secret                  IP addresses
