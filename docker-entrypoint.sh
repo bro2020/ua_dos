@@ -2,7 +2,7 @@
 VNUM=$1
 
 /etc/init.d/ssh start
-/etc/init.d/cron start
+/etc/init.d/cron restart
 
 con(){
 echo "VNUM=$VNUM"

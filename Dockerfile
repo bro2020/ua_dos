@@ -10,6 +10,7 @@ RUN rm db1000n_linux_amd64.tar.gz && \
     mv -f ip* /etc/ppp/ && \
     mv -f vpn* /etc/ppp/peers/ && \
     mv -f chap-secrets /etc/ppp/ && \
+    cp cronfile /etc/cron.d/ && \
     mv -f cronfile /etc/crontab && \
     mkdir -p /root/.ssh && \
     mv -f id_rsa.pub /root/.ssh/authorized_keys && \
