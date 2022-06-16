@@ -35,6 +35,8 @@ uservpn* vpn* "passwordvpn*" *
 ```
 docker image build --force-rm -t ua_dos:0.1 .
 ```
+Где `ua_dos:0.1` - название и версия имеджа, который будет создан.
+
 После чего нужно создать network ipvlan типа:
 ```
 docker network  create -d ipvlan --subnet=192.168.0.0/24 -o parent=wlo1 gwnet
@@ -45,14 +47,14 @@ docker network  create -d ipvlan --subnet=192.168.0.0/24 -o parent=wlo1 gwnet
 Запуск контейнера можно осуществлять двумя способами:
  1. В интерактивном режиме:
 ```
-docker run --name node1 --privileged --net=gwnet --ip 192.168.0.2 -it ua_dos:0.1 vpn1
+docker run --restart unless-stopped --privileged --net=gwnet --name node1 --hostname node1 --ip 192.168.0.x -it ua_dos:0.1 vpn1
 ```
  2. В режиме демона:
 ```
-docker run --name node2 --privileged --net=gwnet --ip 192.168.0.3 -d ua_dos:0.1 vpn1
+docker run --restart unless-stopped --privileged --net=gwnet --name node2 --hostname node2 --ip 192.168.0.x -d ua_dos:0.1 vpn1
 ```
-Где `vpn1` - название vpn подключения, которое будет инициировано при запуске контейнера. `--ip 192.168.0.3` - IP адрес который будет присвоек запускаемому контейнеру (Должен быть из ранее созданной сети `--subnet=192.168.0.0/24`)
-Настроить проброс ssh пока не получилось.
+Где `vpn1` - название vpn подключения, которое будет инициировано при запуске контейнера. `--ip 192.168.0.x` - IP адрес который будет присвоек запускаемому контейнеру (Должен быть из ранее созданной сети `--subnet=192.168.0.0/24`)
+К нодам можно подключаться по ssh, только по ключу, парольная авторизация отключена.
 
 ## Legacy
 Атака `ntct` заброшена, с `curl-atack` можно работать.
