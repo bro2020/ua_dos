@@ -7,8 +7,11 @@ export VPN_PASSWORD=${VPN_PASSWORD}
 
 /etc/init.d/ssh start
 
-mv -f vpn.tpl /etc/ppp/peers/${VPN_SERVER_NAME} && \
-mv -f chap-secrets.tpl /etc/ppp/chap-secrets && \
+vpn_file=$(sed "s/\${VPN_SERVER_NAME}/${VPN_SERVER_NAME}/;s/\${VPN_HOST}/${VPN_HOST}/;s/\${VPN_LOGIN}/${VPN_LOGIN}/;s/\${VPN_PASSWORD}/${VPN_PASSWORD}/g" vpn.tpl)
+chap_file=$(sed "s/\${VPN_SERVER_NAME}/${VPN_SERVER_NAME}/;s/\${VPN_LOGIN}/${VPN_LOGIN}/;s/\${VPN_PASSWORD}/${VPN_PASSWORD}/g" chap-secrets.tpl)
+
+echo "$vpn_file" > /etc/ppp/peers/${VPN_SERVER_NAME}
+echo "$chap_file" > /etc/ppp/chap-secrets
 
 echo "VPN_SERVER_NAME=${VPN_SERVER_NAME}
 VPN_HOST=${VPN_HOST}
