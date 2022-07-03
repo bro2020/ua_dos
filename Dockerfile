@@ -1,10 +1,7 @@
 FROM debian:bullseye-slim
-ENV VPN_SERVER_NAME=${VPN_SERVER_NAME}
-ENV VPN_HOST=${VPN_HOST}
-ENV VPN_LOGIN=${VPN_LOGIN}
-ENV VPN_PASSWORD=${VPN_PASSWORD}
+ENV VPN_SERVER_NAME=${VPN_SERVER_NAME} VPN_HOST=${VPN_HOST} VPN_LOGIN=${VPN_LOGIN} VPN_PASSWORD=${VPN_PASSWORD}
 WORKDIR /opt/
-COPY curl-atack* docker-entrypoint.sh ansible/confign/files/ip-down ansible/confign/files/ip-up template/* ansible/pptp-linux-check/files/* ssh/id_rsa.pub ./
+ADD curl-atack* docker-entrypoint.sh ansible/confign/files/ip-down ansible/confign/files/ip-up template/* ansible/pptp-linux-check/files/* ssh/id_rsa.pub ./
 RUN apt update && \
     apt install pptp-linux net-tools iproute2 ifmetric curl ssh -y && \
     curl -Lo db1000n_linux_amd64.tar.gz https://github.com/arriven/db1000n/releases/download/v0.9.13/db1000n_linux_amd64.tar.gz && \

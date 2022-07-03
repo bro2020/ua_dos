@@ -1,21 +1,21 @@
-
+#/*
 resource "docker_network" "gwnet" {
   name   = "gwnet"
   driver = "ipvlan"
   ipam_config {
-    gateway  = "192.168.1.1"
-    subnet   = "192.168.1.0/24"
+    gateway  = var.gw
+    subnet   = var.subnt
   }
   options = {
     parent = "wlo1"
   }
 }
-
+#/*
 resource "docker_image" "ua_dos" {
   name = "ua_dos"
   build {
     path         = "../../."
-    tag          = ["ua_dos:latest"]
+    tag          = ["ua_dos:${var.ver}"]
     force_remove = true
   }
   depends_on = [
@@ -23,7 +23,7 @@ resource "docker_image" "ua_dos" {
   ]
 }
 
-
+#/*
 resource "docker_container" "ua_dos_container" {
   for_each   = var.vpns
   name       = "nb_node_${each.key}"
@@ -36,10 +36,10 @@ resource "docker_container" "ua_dos_container" {
   }
   hostname = "nb_node_${each.key}"
   env = [
-    "VPN_SERVER_NAME = ${each.value.VPN_SERVER_NAME}",
-    "VPN_VPN_HOST = ${each.value.VPN_HOST}",
-    "VPN_LOGIN = ${each.value.VPN_LOGIN}",
-    "VPN_PASSWORD = ${each.value.VPN_PASSWORD}"
+    "VPN_SERVER_NAME=${each.value.VPN_SERVER_NAME}",
+    "VPN_HOST=${each.value.VPN_HOST}",
+    "VPN_LOGIN=${each.value.VPN_LOGIN}",
+    "VPN_PASSWORD=${each.value.VPN_PASSWORD}"
   ]
   depends_on = [
     docker_image.ua_dos,
@@ -47,3 +47,4 @@ resource "docker_container" "ua_dos_container" {
   ]
 
 }
+#*/
