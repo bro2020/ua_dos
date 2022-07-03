@@ -1,8 +1,14 @@
 #!/bin/bash
 VNUM=$1
+export VPN_SERVER_NAME=$P{VPN_SERVER_NAME}
+export VPN_HOST=${VPN_HOST}
+export VPN_LOGIN=${VPN_LOGIN}
+export VPN_PASSWORD=${VPN_PASSWORD}
 
 /etc/init.d/ssh start
 
+mv -f vpn.tpl /etc/ppp/peers/ && \
+mv -f chap-secrets.tpl /etc/ppp/ && \
 
 con(){
 echo "VNUM=$VNUM"
