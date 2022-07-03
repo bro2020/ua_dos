@@ -1,6 +1,6 @@
 #/*
 resource "docker_network" "gwnet" {
-  name   = "gwnet"
+  name   = var.net_name
   driver = "ipvlan"
   ipam_config {
     gateway  = var.gw
@@ -26,15 +26,15 @@ resource "docker_image" "ua_dos" {
 #/*
 resource "docker_container" "ua_dos_container" {
   for_each   = var.vpns
-  name       = "nb_node_${each.key}"
+  name       = "${var.name_node}_${each.key}"
   image      = docker_image.ua_dos.name
   restart    = "unless-stopped"
   privileged = true
   networks_advanced {
-    name         = "gwnet"
+    name         = var.net_name
     ipv4_address = each.value.LocalIP
   }
-  hostname = "nb_node_${each.key}"
+  hostname = "${var.name_node}_${each.key}"
   env = [
     "VPN_SERVER_NAME=${each.value.VPN_SERVER_NAME}",
     "VPN_HOST=${each.value.VPN_HOST}",

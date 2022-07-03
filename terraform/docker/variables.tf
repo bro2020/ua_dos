@@ -3,6 +3,11 @@ variable "ver" {
   default = "latest"
 }
 
+variable "name_node" {
+  type    = string
+  default = "nb_node"
+}
+
 variable "vpns" {
   type = map(any)
   default = {
@@ -79,6 +84,14 @@ variable "vpns" {
 */ }
 }
 
+variable "net_interface" {
+  default = "wlo1"
+}
+
+variable "net_name" {
+  default = "gwnet"
+}
+
 variable "gw" {
   default = "192.168.1.1"
 }
@@ -86,8 +99,4 @@ variable "gw" {
 variable "subnt" {
   default = "192.168.1.0/24"
 
-}
-
-variable "net_interface" {
-  default = "wlo1"
 }
