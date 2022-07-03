@@ -27,11 +27,12 @@ check_and_start
 check_and_start(){
 if [[ "$(ifconfig | grep ppp0)" != '' ]]; then
 echo "Connection to $VNUM completed successfully :)"
-/opt/checker.sh &
+#/opt/checker.sh &
 /opt/db1000n
 else
 echo 'VPN not worked :('
-exit 1
+sleep 1000
+#exit 1
 fi
 }
 
