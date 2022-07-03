@@ -40,8 +40,8 @@ variable "vpns" {
       VPN_LOGIN       = "adminr"
       VPN_PASSWORD    = "adminr"
       LocalIP         = "192.168.1.6"
-   }
-/*   "vpn6" = {
+    }
+  /*   "vpn6" = {
       VPN_SERVER_NAME = "vpn6"
       VPN_HOST        = "0.0.0.0"
       VPN_LOGIN       = "adminr"
@@ -85,4 +85,9 @@ variable "gw" {
 
 variable "subnt" {
   default = "192.168.1.0/24"
+
+}
+
+variable "net_interface" {
+  default = "wlo1"
 }
