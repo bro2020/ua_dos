@@ -7,7 +7,7 @@ resource "docker_network" "gwnet" {
     subnet   = var.subnt
   }
   options = {
-    parent = "var.net_interface"
+    parent = var.net_interface
   }
 }
 #/*
