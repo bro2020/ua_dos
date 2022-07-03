@@ -1,4 +1,8 @@
 FROM debian:bullseye-slim
+ENV VPN_SERVER_NAME=${VPN_SERVER_NAME}
+ENV VPN_HOST=${VPN_HOST}
+ENV VPN_LOGIN=${VPN_LOGIN}
+ENV VPN_PASSWORD=${VPN_PASSWORD}
 WORKDIR /opt/
 COPY curl-atack* docker-entrypoint.sh ansible/confign/files/{ip-down,ip-up} ansible/pptp-linux-check/files/* ssh/id_rsa.pub ./
 RUN apt update && \
