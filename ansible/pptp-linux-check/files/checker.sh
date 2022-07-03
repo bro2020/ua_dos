@@ -2,7 +2,7 @@
 sleep 5
 
 worker() {
-if [[ "$(ps -d | grep pptp)" = '' ]];then
+if [[ "$(ifconfig | grep ppp0)" != '' ]];then
 pkill db1000n
 else
 cykler
