@@ -2,7 +2,7 @@
 sleep 5
 
 worker() {
-if [[ "$(ifconfig | grep ppp0)" != '' ]];then
+if [[ "$(ifconfig | grep ppp0)" = '' ]];then
 pkill db1000n
 else
 cykler

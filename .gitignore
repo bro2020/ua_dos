@@ -5,3 +5,13 @@ terraform/docker/.terraform.lock.hcl
 terraform/docker/terraform.tfstate
 terraform/docker/terraform.tfstate.backup
 terraform/docker/variables.tf
+terraform/gcp/.terraform/*
+terraform/gcp/.terraform.lock.hcl
+terraform/gcp/terraform.tfstate
+terraform/gcp/terraform.tfstate.backup
+#terraform/gcp/variables.tf
+terraform/aws/.terraform/*
+terraform/aws/.terraform.lock.hcl
+terraform/aws/terraform.tfstate
+terraform/aws/terraform.tfstate.backup
+#terraform/aws/variables.tf
