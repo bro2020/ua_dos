@@ -9,6 +9,7 @@ terraform/gcp/.terraform/*
 terraform/gcp/.terraform.lock.hcl
 terraform/gcp/terraform.tfstate
 terraform/gcp/terraform.tfstate.backup
+#terraform/gcp/keys/*
 #terraform/gcp/variables.tf
 terraform/aws/.terraform/*
 terraform/aws/.terraform.lock.hcl
