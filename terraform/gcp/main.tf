@@ -29,3 +29,9 @@ output "external-ip" {
   for i in google_compute_instance.ua_dos_nodes : i.name => i.network_interface[0].access_config.0.nat_ip
   }
 }
+
+output "node-type" {
+  value = {
+  for i in google_compute_instance.ua_dos_nodes : i.name => i.machine_type
+  }
+}
